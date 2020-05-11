@@ -3,6 +3,13 @@ require 'rspec/core/rake_task'
 
 RSpec::Core::RakeTask.new(:spec)
 
+desc <<~DESC
+  Set up Rails app for testing
+
+  Example usage:
+
+      rake setup_test_app[5.1.4]
+DESC
 task :setup_test_app, [:rails_version] do |_task, args|
   require_relative './spec/test_apps/setup'
   TestApps::Setup.call args.fetch(:rails_version) {
