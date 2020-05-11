@@ -10,6 +10,7 @@ module TestApps
 
     def call
       return if completed?
+
       abort(generate_app_instructions) unless app_exists?
       add_symlinks
       puts "Done!"
@@ -24,7 +25,7 @@ module TestApps
     end
 
     def app_exists?
-      Dir.exists?(root)
+      Dir.exist?(root)
     end
 
     def root
