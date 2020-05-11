@@ -61,7 +61,8 @@ module TestApps
 
         This can be achieved by running:
 
-            cd /tmp \\
+            mkdir -p ../guide-tmp \\
+            && cd ../guide-tmp \\
             && gem install rails -v#{rails_version} \\
             && rails _#{rails_version}_ new test_app \\
               --skip-yarn \\
@@ -81,6 +82,7 @@ module TestApps
               --skip-bundle \\
             && mv test_app #{root} \\
             && cd #{gem_root} \\
+            && rmdir ../guide-tmp \\
             && bundle exec rake setup_test_app[#{rails_version}]
 
       EOS
