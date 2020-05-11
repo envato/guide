@@ -64,7 +64,6 @@ module TestApps
             cd /tmp \\
             && gem install rails -v#{rails_version} \\
             && rails _#{rails_version}_ new test_app \\
-              --database=sqlite3 \\
               --skip-yarn \\
               --skip-gemfile \\
               --skip-git \\
@@ -72,6 +71,7 @@ module TestApps
               --skip-action-mailer \\
               --skip-puma \\
               --skip-action-cable \\
+              --skip-active-record \\
               --skip-spring \\
               --skip-listen \\
               --skip-coffee \\
